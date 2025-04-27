@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Header and Hero Section</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.cdnfonts.com/css/mona-sans" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+
+  <script src="/js/script.js"></script>
+  <script src="./js/gsap.js"></script>
+</head>
+
+<body>
+  <!-- Trigger -->
+  <section class="trigger">
+    <!-- Primera seccion -->
+    <section class="inicio_animacion">
+      <header class="header">
+        <div class="logo">
+          <img src="assets/svgs/logo.svg" alt="" /> BestDealer
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Contatti</a></li>
+            <li><a href="/about.html">Chi Siamo</a></li> <!-- Modified this line -->
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <a href="#" class="signup">Sign Up</a>
+          <a href="#" class="signin">Sign In</a>
+        </div>
+      </header>
+      <div class="capa-inicio-animacion">
+        <img class="img_capa" src="assets/svgs/logoexcluido.svg" alt="" />
+      </div>
+      <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+          <div class="tag-buttons">
+            <button>Despreocúpate Por Reparaciones</button>
+            <button>Mantenimiento Asegurado</button>
+          </div>
+          <div class="grid-hero">
+            <div class="main-text">
+              <p>
+                Trabajamos Para Ti Y Por Ti, Por Menos Preocupaciones Y Más
+                Seguridad
+              </p>
+              <h1>We Keep Your Greatest Asset Insured</h1>
+            </div>
+            <div class="info-box">
+              <h3>Nuestra Experiencia Nos Respalda</h3>
+              <hr class="new1" />
+              <p>
+                Hemos Logrado Ayudarte A Más De 22 Mil Personas Por Más De 18
+                Años.
+              </p>
+              <hr class="new1" />
+              <span>22K+</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Segunda seccion -->
+    <section class="equipo">
+      <p>
+        Todo nuestro equipo de trabajo da lo mejor para que nuestros servicios
+        sea lo mejor.
+      </p>
+
+      <div class="conten-equipo-lista">
+        <div style="left: -30vw" id="cintauno" class="lista-equipo">
+          <div class="item-equipo">
+            <img src="assets/avatar1.png" alt="Avatar 1" class="team-avatar" />
+            <span>Mantenimiento</span>
+          </div>
+          <div class="item-equipo">
+            <img src="assets/avatar2.png" alt="Avatar 1" class="team-avatar" />
+            <span>Seguridad</span>
+          </div>
+          <div class="item-equipo">
+            <img src="assets/avatar3.png" alt="Avatar 1" class="team-avatar" />
+            <span>Compromiso</span>
+          </div>
+          <div class="item-equipo">
+            <img src="assets/avatar4.png" alt="Avatar 1" class="team-avatar" />
+            <span>Seguridad</span>
+          </div>
+          <div class="item-equipo">
+            <img src="assets/avatar4.png" alt="Avatar 1" class="team-avatar" />
+            <span>Seguridad</span>
+          </div>
+          <div class="item-equipo">
+            <img src="assets/avatar4.png" alt="Avatar 1" class="team-avatar" />
+            <span>Seguridad</span>
+          </div>
+        </div>
+
+        <div style="left: -10vw" id="cintados" class="lista-equipo">
+          <div class="item-equipo">
+            <img src="assets/avatar1.png" alt="Avatar 1" class="team-avatar" />
+            <span>Mantenimiento</span>
+          </div>
+          <div class="item-equipo">
+            <img src="assets/avatar2.png" alt="Avatar 1" class="team-avatar" />
+            <span>Seguridad</span>
+          </div>
+          <div class="item-equipo">
+            <img src="assets/avatar3.png" alt="Avatar 1" class="team-avatar" />
+            <span>Compromiso</span>
+          </div>
+          <div class="item-equipo">
+            <img src="assets/avatar4.png" alt="Avatar 1" class="team-avatar" />
+            <span>Seguridad</span>
+          </div>
+          <div class="item-equipo">
+            <img src="assets/avatar4.png" alt="Avatar 1" class="team-avatar" />
+            <span>Seguridad</span>
+          </div>
+          <div class="item-equipo">
+            <img src="assets/avatar4.png" alt="Avatar 1" class="team-avatar" />
+            <span>Seguridad</span>
+          </div>
+        </div>
+
+        <div id="cintatres" class="lista-equipo">
+          <div class="item-equipo">
+            <img src="assets/avatar1.png" alt="Avatar 1" class="team-avatar" />
+            <span>Mantenimiento</span>
+          </div>
+          <div class="item-equipo">
+            <img src="assets/avatar2.png" alt="Avatar 1" class="team-avatar" />
+            <span>Seguridad</span>
+          </div>
+          <div class="item-equipo">
+            <img src="assets/avatar3.png" alt="Avatar 1" class="team-avatar" />
+            <span>Compromiso</span>
+          </div>
+          <div class="item-equipo">
+            <img src="assets/avatar4.png" alt="Avatar 1" class="team-avatar" />
+            <span>Seguridad</span>
+          </div>
+          <div class="item-equipo">
+            <img src="assets/avatar4.png" alt="Avatar 1" class="team-avatar" />
+            <span>Seguridad</span>
+          </div>
+          <div class="item-equipo">
+            <img src="assets/avatar4.png" alt="Avatar 1" class="team-avatar" />
+            <span>Seguridad</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pie-equipo">
+        <p>Conoce más de nuestro equipo</p>
+        <i class="fas fa-arrow-down"></i>
+      </div>
+    </section>
+    <!-- Tercera seccion -->
+    <section class="packs-section">
+      <h1 class="packages__title">I Nostri Packs</h1>
+      <div class="packages__grid">
+
+      </div>
+    </section>
+
+    <!-- Cuarta seccion -->
+    <section class="card-seccion">
+      <div class="background-text">BestDealer</div>
+      <div class="content-card">
+        <div class="cards">
+          <img src="assets/support.png" alt="Technical Support" />
+          <h3>Soporte Técnico 24/7</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            vehicula nisi a lectus gravida varius.
+          </p>
+        </div>
+        <div class="cards">
+          <img src="assets/mechanic.png" alt="Mechanical Assistance" />
+          <h3>Asistencia Mecánica</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            vehicula nisi a lectus gravida varius.
+          </p>
+        </div>
+        <div class="cards">
+          <img src="assets/mechanic.png" alt="Mechanical Assistance" />
+          <h3>Asistencia Mecánica</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            vehicula nisi a lectus gravida varius.
+          </p>
+        </div>
+      </div>
+      <div class="pie-seccion-card">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+          vehicula nisi a lectus gravida varius
+        </p>
+      </div>
+    </section>
+    <section class="best-info-section">
+      <div class="top-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula nisi a lectus gravida varius
+      </div>
+      <div class="background-info">
+        Conoce nuestro servicio de<br>Asistencia En carretera
+      </div>
+      <div class="bottom-text">
+        <p>Scroll to explore</p><i class="fas fa-arrow-down"></i>
+      </div>
+    </section>
+    <!-- Quinta seccion -->
+    <section class="white-container">
+      <div class="stats-container">
+        <div class="background-icon"></div>
+        <div class="stats-content">
+          <div class="stats-number"></div>
+          <div id="number-two" class="stats-number-two">+500</div>
+          <div class="stats-description">Cobertura En Más De 25 Provincias Al Rededor Del País</div>
+          <div class="stats-description-two">Talleres en todo el pais con los que tenemos convenios</div>
+          <div id="start_1" class="decorative-shapes">
+            <img src="assets/svgs/star1_v2.svg" alt="" class="shape star-1">
+          </div>
+          <div id="start_2" class="decorative-shapes">
+            <img src="assets/svgs/star2.svg" alt="" class="shape star-2">
+          </div>
+          <div id="start_3" class="decorative-shapes">
+            <img src="assets/svgs/star3.svg" alt="" class="shape asterisk">
+          </div>
+          <div class="content-wrapper">
+            <div class="cta-title">Voui Essere Un <span class="">Bestdealer</span> E Lavarore Con Noi?</div>
+            <button class="cta-button">Info <i class="arrow-icon fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="grid-stats">
+          <div class="stats stats-1 ">
+            <p class="stats-number-stast">12k</p>
+            <p class="stats-description-stast">Cobertura En Más De 25 Provincias Al Rededor Del País</p>
+          </div>
+          <div class="stats">
+            <img src="assets/image copy.png" alt="" class="card-in">
+          </div>
+          <div class="stats stats.2">
+            <button class="cta-button">Info <i class="arrow-icon fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+        <!-- <div class="cta-cotainer">
+  
+            
+          </div> -->
+        <div class="scroll-indicator">
+          <div class="scroll-text">
+            <p>Scroll to explore</p><i class="fas fa-arrow-down"></i>
+          </div>
+        </div>
+    </section>
+    <section class="contact-section">
+      <h2 class="contact-title">Contattaco</h2>
+
+      <form id="contactForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Nome</label>
+            <input type="text" class="form-input" placeholder="Il Tuo Nome Completo" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Telefono</label>
+            <input type="tel" class="form-input" placeholder="Il Tuo Numero Di Telefono" required />
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" placeholder="Email@email.com" required />
+        </div>
+
+        <div class="form-group full-width">
+          <label class="form-label">Messaggio</label>
+          <textarea class="form-textarea" placeholder="Inserisci Il Tuo Messaggio" required></textarea>
+        </div>
+
+        <div class="form-group full-width">
+          <label class="form-label">Tema</label>
+          <div class="checkbox-group">
+            <label class="checkbox-item">
+              <input type="checkbox" class="checkbox-input" name="tema" />
+              Assistenza
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" class="checkbox-input" name="tema" />
+              Arruolamenti BestDealer
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" class="checkbox-input" name="tema" />
+              Vuioi Essere Un Bestdealer
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" class="checkbox-input" name="tema" />
+              Partners
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-button">Invia</button>
+      </form>
+    </section>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-top">
+          <div class="footer-logo">
+            <img src="assets/svgs/logo.svg" alt="" /> BestDealer
+          </div>
+          <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Chi Siamo</a>
+            <a href="#">Contattaci</a>
+            <a href="#">Piattaforma</a>
+          </nav>
+        </div>
+
+        <div class="footer-main">
+          <div class="footer-section">
+            <h3>Contatti</h3>
+            <div class="contact-info">
+              <a href="tel:+39026115227">+39 026 115 22 74</a>
+              <a href="mailto:info@bestdealer.it">info@bestdealer.it</a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h3>Socials</h3>
+            <div class="social-links">
+              <a href="#">LinkedIn</a>
+              <a href="#">Instagram</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>2024, All Right Reserved</div>
+          <div>Privacy Policy</div>
+          <div class="developed-by">Developed By <strong>Digithub</strong></div>
+        </div>
+      </div>
+      <div class="background--text">BestDealer</div>
+    </footer>
+  </section>
+
+
+  <!-- Trigger -->
+</body>
+
+</html>
