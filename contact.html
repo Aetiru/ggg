@@ -6,36 +6,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact - BestDealer</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.cdnfonts.com/css/mona-sans" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 
 <body>
   <header class="header">
     <div class="logo">
-      <img src="assets/svgs/logo.svg" alt="" /> BestDealer
+      <img src="assets/svgs/logo.svg" alt="" />
+      <p>BestDealer</p>
     </div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
     <nav class="nav">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about-us.html">Chi Siamo</a></li>
+        <li><a href="about.html">Chi Siamo</a></li>
         <li><a href="contact.html" class="active">Contatti</a></li>
       </ul>
     </nav>
     <div class="auth-buttons">
-      <a href="#" class="signup">Sign Up</a>
-      <a href="#" class="signin">Sign In</a>
+      <a href="http://dev.bestdealer.it/signup" target="_blank" class="signup">Sign Up</a>
+      <a href="http://dev.bestdealer.it/login" target="_blank" class="signin">Sign In</a>
     </div>
   </header>
 
   <main class="contact-main">
     <div class="contact-container">
       <div class="contact-content">
-        <h1>Habla Con Nuestros<br>Expertos Te Atenderemos<br>Lo Mas Pronto Posible</h1>
-        <p class="contact-subtitle">Ingresa La Siguiente Informacion Para Que Nuestros Asesores Puedan Atenderte De
-          Forma Mas Personalizada</p>
+        <h1 class="title-one">Parla con i nostri esperti</h1>
+        <!-- <h1 class="title-two">Ti risponderemo il prima possibile.</h1> -->
+        <h2>Il nostro team è sempre a tua disposizione</h2>
+        <p class="contact-subtitle">Per offrirti un'assistenza personalizzata, ti preghiamo di fornirci le
+          seguenti informazioni:</p>
 
-        <section class="contact-section">
+        <section class="contact-section-about">
           <form id="contactForm">
             <div class="form-grid">
               <div class="form-group">
@@ -99,9 +108,11 @@
         </div>
         <nav class="nav-links">
           <a href="#">Home</a>
-          <a href="#">Chi Siamo</a>
-          <a href="#">Contattaci</a>
-          <a href="#">Piattaforma</a>
+          <a href="#">Reti Officine</a>
+          <a href="#">Documenti</a>
+          <a href="#">Vuoi lavorare con noi?</a>
+          <a href="http://dev.bestdealer.it/login">Portale Usato</a>
+          <a href="#">Termini e Condizioni</a>
         </nav>
       </div>
 
@@ -114,23 +125,28 @@
           </div>
         </div>
 
-        <div class="footer-section">
-          <h3>Socials</h3>
-          <div class="social-links">
-            <a href="#">LinkedIn</a>
-            <a href="#">Instagram</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div>2024, All Right Reserved</div>
-        <div>Privacy Policy</div>
-        <div class="developed-by">Developed By <strong>Digithub</strong></div>
+        <!-- <div class="footer-section">
+        </div> -->
       </div>
     </div>
-    <div class="background--text">BestDealer</div>
-  </footer>
 
+    <div class="footer-bottom">
+      <div></div>
+      <div>Politica sulla riservatezza</div>
+      <div class="developed-by">Developed by<strong>Digithab</strong>
+      </div>
+    </div>
+    </div>
+    <div class="footer--text" id="footer-text">BestDealer</div>
+  </footer>
+  <script>
+    const toggleButton = document.getElementById("menu-toggle");
+    const nav = document.querySelector(".nav");
+
+    toggleButton.addEventListener("click", () => {
+      nav.classList.toggle("nav-open");
+    });
+  </script>
 </body>
+
 </html>

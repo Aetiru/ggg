@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BestDealer - Mobile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    :root {
+      --primary-color: #0056b3;
+      --secondary-color: #f8f9fa;
+      --accent-color: #ff6b6b;
+      --text-color: #333;
+      --light-text: #fff;
+      --border-radius: 8px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Mona Sans', sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .logo img {
+      height: 30px;
+      margin-right: 5px;
+    }
+
+    .menu-toggle {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 80%;
+      height: 100%;
+      background-color: #fff;
+      z-index: 200;
+      padding: 2rem 1rem;
+      transition: left 0.3s ease;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-nav.active {
+      left: 0;
+    }
+
+    .close-menu {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .mobile-nav ul {
+      list-style: none;
+      margin-top: 2rem;
+    }
+
+    .mobile-nav li {
+      margin-bottom: 1rem;
+    }
+
+    .mobile-nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 1.1rem;
+      display: block;
+      padding: 0.5rem 0;
+    }
+
+    .mobile-nav a.active {
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    .auth-buttons {
+      display: flex;
+      flex-direction: column;
+      margin-top: 2rem;
+    }
+
+    .auth-buttons a {
+      padding: 0.5rem 1rem;
+      border-radius: var(--border-radius);
+      text-align: center;
+      margin-bottom: 1rem;
+      text-decoration: none;
+    }
+
+    .signup {
+      background-color: var(--primary-color);
+      color: #fff !important;
+    }
+
+    .signin {
+      border: 1px solid var(--primary-color);
+      color: var(--primary-color) !important;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 6rem 1rem 2rem;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-box {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: var(--text-color);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .info-box h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+
+    .new1 {
+      border: 0;
+      height: 1px;
+      background-color: rgba(0, 0, 0, 0.1);
+      margin: 1rem 0;
+    }
+
+    .stats-counter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .stats-counter img {
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .stats-counter span {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    /* Team Section */
+    .equipo {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .equipo p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .item-equipo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .team-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Packages Section */
+    .packs-section {
+      padding: 3rem 1rem;
+      background-color: var(--secondary-color);
+    }
+
+    .packages__title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      color: var(--primary-color);
+    }
+
+    .packages__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .package {
+      background-color: #fff;
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .package h3 {
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .package p {
+      margin-bottom: 1rem;
+    }
+
+    .package-price {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin: 1rem 0;
+    }
+
+    .package-btn {
+      display: block;
+      background-color: var(--primary-color);
+      color: #fff;
+      text-align: center;
+      padding: 0.7rem;
+      border-radius: var(--border-radius);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Services Section */
+    .card-seccion {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .cards {
+      background-color: #fff;
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1.5rem;
+    }
+
+    .cards img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+    }
+
+    .cards h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+
+    /* Stats Section */
+    .white-container {
+      padding: 3rem 1rem;
+      background-color: var(--secondary-color);
+      text-align: center;
+    }
+
+    .stats-content {
+      margin-bottom: 2rem;
+    }
+
+    .stats-number-two {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .stats-description-two {
+      margin-bottom: 2rem;
+    }
+
+    .cta-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .cta-title span {
+      color: var(--primary-color);
+    }
+
+    .cta-button {
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: var(--border-radius);
+      font-weight: bold;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .arrow-icon {
+      margin-left: 0.5rem;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 3rem 1rem;
+    }
+
+    .contact-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      color: var(--primary-color);
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: var(--border-radius);
+      margin-bottom: 1.5rem;
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .checkbox-input {
+      margin-right: 0.5rem;
+    }
+
+    .submit-button {
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: var(--border-radius);
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #333;
+      color: #fff;
+      padding: 2rem 1rem 1rem;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-logo img {
+      height: 30px;
+      margin-right: 5px;
+    }
+
+    .nav-links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-links img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .footer-section h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .contact-info a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 1rem;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.8rem;
+    }
+
+    .developed-by {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="assets/svgs/logo.svg" alt="" /> BestDealer
+    </div>
+    <button class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="close-menu" id="closeMenu">
+      <i class="fas fa-times"></i>
+    </button>
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="/about.html">Chi Siamo</a></li>
+      <li><a href="/contact.html">Contatti</a></li>
+    </ul>
+    <div class="auth-buttons">
+      <a href="http://dev.bestdealer.it/signup" target="_blank" class="signup">Sign Up</a>
+      <a href="http://dev.bestdealer.it/login" target="_blank" class="signin">Sign In</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <!-- <div class="main-text">
+      <p>Lavoriamo per te e con te, per meno preoccupazioni e più sicurezza.</p>
+      <h1>La tua sicurezza, la nostra missione!</h1>
+    </div>
+    <div class="info-box">
+      <h3>La nostra esperienza ci supporta</h3>
+      <hr class="new1" />
+      <p>Abbiamo aiutato oltre 22.000 clienti per oltre 18 anni.</p>
+      <hr class="new1" />
+      <div class="stats-counter">
+        <img src="assets/svgs/icon1.svg" alt="">
+        <span>22K+</span>
+      </div>
+    </div> -->
+  </section>
+
+  <section class="equipo">
+    <p>Tutto il nostro team fa del suo meglio per garantire che i nostri servizi siano i migliori.</p>
+    <div class="team-grid">
+      <div class="item-equipo">
+        <img src="assets/avatar1.png" alt="Avatar 1" class="team-avatar" />
+        <span>Manutenzione</span>
+      </div>
+      <div class="item-equipo">
+        <img src="assets/avatar2.png" alt="Avatar 2" class="team-avatar" />
+        <span>Sicurezza</span>
+      </div>
+      <div class="item-equipo">
+        <img src="assets/avatar3.png" alt="Avatar 3" class="team-avatar" />
+        <span>Impegno</span>
+      </div>
+      <div class="item-equipo">
+        <img src="assets/avatar4.png" alt="Avatar 4" class="team-avatar" />
+        <span>Sicurezza</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="packs-section">
+    <h2 class="packages__title">I Nostri Packs</h2>
+    <div class="packages__grid">
+      <div class="package">
+        <h3>Pack Base</h3>
+        <p>Assistenza stradale base con copertura provinciale.</p>
+        <div class="package-price">€199/anno</div>
+        <a href="#" class="package-btn">Scegli Piano</a>
+      </div>
+      <div class="package">
+        <h3>Pack Premium</h3>
+        <p>Assistenza stradale completa con copertura nazionale.</p>
+        <div class="package-price">€299/anno</div>
+        <a href="#" class="package-btn">Scegli Piano</a>
+      </div>
+      <div class="package">
+        <h3>Pack Business</h3>
+        <p>Soluzioni per flotte aziendali con assistenza prioritaria.</p>
+        <div class="package-price">€499/anno</div>
+        <a href="#" class="package-btn">Scegli Piano</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="card-seccion">
+    <h2>I Nostri Servizi</h2>
+    <div class="cards">
+      <img src="assets/support.png" alt="Technical Support" />
+      <h3>Supporto tecnico 24/7</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+        vehicula nisi a lectus gravida varius.
+      </p>
+    </div>
+    <div class="cards">
+      <img src="assets/mechanic.png" alt="Mechanical Assistance" />
+      <h3>Assistenza meccanica</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+        vehicula nisi a lectus gravida varius.
+      </p>
+    </div>
+    <div class="cards">
+      <img src="assets/mechanic.png" alt="Mechanical Assistance" />
+      <h3>Assistenza meccanica</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+        vehicula nisi a lectus gravida varius.
+      </p>
+    </div>
+  </section>
+
+  <section class="white-container">
+    <div class="stats-content">
+      <div class="stats-number-two">+500</div>
+      <div class="stats-description-two">Concessionarie su tutto il territorio nazionale con cui abbiamo accordi</div>
+      <div class="stats-number-two">+25</div>
+      <div class="stats-description-two">Copertura in più di 25 province in tutta Italia</div>
+    </div>
+    <div class="content-wrapper">
+      <div class="cta-title">Voui Essere Un <span>Bestdealer</span> E Lavarore Con Noi?</div>
+      <button class="cta-button">Info <i class="arrow-icon fas fa-arrow-right"></i></button>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <h2 class="contact-title">Contattaci</h2>
+
+    <form id="contactForm">
+      <div class="form-group">
+        <label class="form-label">Nome</label>
+        <input type="text" class="form-input" placeholder="Il Tuo Nome Completo" required />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Telefono</label>
+        <input type="tel" class="form-input" placeholder="Il Tuo Numero Di Telefono" required />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-input" placeholder="Email@email.com" required />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Messaggio</label>
+        <textarea class="form-textarea" placeholder="Inserisci Il Tuo Messaggio" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Tema</label>
+        <div class="checkbox-group">
+          <label class="checkbox-item">
+            <input type="checkbox" class="checkbox-input" name="tema" />
+            Assistenza
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" class="checkbox-input" name="tema" />
+            Info su BestDealer
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" class="checkbox-input" name="tema" />
+            Lavora con noi
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" class="checkbox-input" name="tema" />
+            Partners
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-button">Invia</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="assets/svgs/logo.svg" alt="" /> BestDealer
+      </div>
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Reti Officine</a>
+        <a href="#">Documenti</a>
+        <a href="#">Vuoi lavorare con noi?</a>
+        <a href="http://dev.bestdealer.it/login">Portale Usato</a>
+        <a href="#">Termini e Condizioni</a>
+        <div class="social-links">
+          <a href="#"><img src="assets/svgs/facebook.svg" alt="Facebook"></a>
+          <a href="#"><img src="assets/svgs/instagram.svg" alt="Instagram"></a>
+          <a href="#"><img src="assets/svgs/linkelnd.svg" alt="LinkedIn"></a>
+        </div>
+      </nav>
+
+      <div class="footer-section">
+        <h3>Contatti</h3>
+        <div class="contact-info">
+          <a href="tel:+39026115227">+39 026 115 22 74</a>
+          <a href="mailto:info@bestdealer.it">info@bestdealer.it</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>Politica sulla riservatezza</div>
+      <div class="developed-by">Developed by <strong>Digithab</strong></div>
+    </div>
+  </footer>
+
+  <!-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuToggle = document.getElementById('menuToggle');
+      const closeMenu = document.getElementById('closeMenu');
+      const mobileNav = document.getElementById('mobileNav');
+
+      menuToggle.addEventListener('click', function () {
+        mobileNav.classList.add('active');
+      });
+
+      closeMenu.addEventListener('click', function () {
+        mobileNav.classList.remove('active');
+      });
+    });
+  </script> -->
+</body>
+
+</html>

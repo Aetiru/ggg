@@ -6,12 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Header and Hero Section</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.cdnfonts.com/css/mona-sans" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
-
+  <script src="js/textEffects.js"></script>
   <script src="/js/script.js"></script>
   <script src="./js/gsap.js"></script>
 </head>
@@ -25,16 +28,19 @@
         <div class="logo">
           <img src="assets/svgs/logo.svg" alt="" /> BestDealer
         </div>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
         <nav class="nav">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Contatti</a></li>
+            <li><a class="active" href="#">Home</a></li>
             <li><a href="/about.html">Chi Siamo</a></li> <!-- Modified this line -->
+            <li><a href="/contact.html">Contatti</a></li>
           </ul>
         </nav>
         <div class="auth-buttons">
-          <a href="#" class="signup">Sign Up</a>
-          <a href="#" class="signin">Sign In</a>
+          <a href="http://dev.bestdealer.it/signup" target="_blank" class="signup">Sign Up</a>
+          <a href="http://dev.bestdealer.it/login" target="_blank" class="signin">Sign In</a>
         </div>
       </header>
       <div class="capa-inicio-animacion">
@@ -43,27 +49,24 @@
       <section class="hero">
         <div class="overlay"></div>
         <div class="hero-content">
-          <div class="tag-buttons">
-            <button>Despreocúpate Por Reparaciones</button>
-            <button>Mantenimiento Asegurado</button>
-          </div>
           <div class="grid-hero">
             <div class="main-text">
               <p>
-                Trabajamos Para Ti Y Por Ti, Por Menos Preocupaciones Y Más
-                Seguridad
+                Lavoriamo per te e con te, per meno preoccupazioni e più sicurezza.
               </p>
-              <h1>We Keep Your Greatest Asset Insured</h1>
+              <h1>La tua sicurezza, la nostra missione!</h1>
             </div>
             <div class="info-box">
-              <h3>Nuestra Experiencia Nos Respalda</h3>
+              <h3>La nostra esperienza ci supporta</h3>
               <hr class="new1" />
               <p>
-                Hemos Logrado Ayudarte A Más De 22 Mil Personas Por Más De 18
-                Años.
+                Abbiamo aiutato oltre 22.000 clienti per oltre 18 anni.
               </p>
               <hr class="new1" />
-              <span>22K+</span>
+              <div class="stats-counter">
+                <i class=""><img src="assets/svgs/icon1.svg" alt=""></i>
+                <span>22K+</span>
+              </div>
             </div>
           </div>
         </div>
@@ -72,97 +75,96 @@
 
     <!-- Segunda seccion -->
     <section class="equipo">
-      <p>
-        Todo nuestro equipo de trabajo da lo mejor para que nuestros servicios
-        sea lo mejor.
+      <p id="equipo-text-1">
+        Tutto il nostro team fa del suo meglio per garantire che i nostri servizi siano i migliori.
       </p>
 
       <div class="conten-equipo-lista">
         <div style="left: -30vw" id="cintauno" class="lista-equipo">
           <div class="item-equipo">
             <img src="assets/avatar1.png" alt="Avatar 1" class="team-avatar" />
-            <span>Mantenimiento</span>
+            <span>Manutenzione</span>
           </div>
           <div class="item-equipo">
             <img src="assets/avatar2.png" alt="Avatar 1" class="team-avatar" />
-            <span>Seguridad</span>
+            <span>Sicurezza</span>
           </div>
           <div class="item-equipo">
             <img src="assets/avatar3.png" alt="Avatar 1" class="team-avatar" />
-            <span>Compromiso</span>
+            <span>Impegno</span>
           </div>
           <div class="item-equipo">
             <img src="assets/avatar4.png" alt="Avatar 1" class="team-avatar" />
-            <span>Seguridad</span>
+            <span>Sicurezza</span>
           </div>
           <div class="item-equipo">
             <img src="assets/avatar4.png" alt="Avatar 1" class="team-avatar" />
-            <span>Seguridad</span>
+            <span>Sicurezza</span>
           </div>
           <div class="item-equipo">
             <img src="assets/avatar4.png" alt="Avatar 1" class="team-avatar" />
-            <span>Seguridad</span>
+            <span>Sicurezza</span>
           </div>
         </div>
 
         <div style="left: -10vw" id="cintados" class="lista-equipo">
           <div class="item-equipo">
             <img src="assets/avatar1.png" alt="Avatar 1" class="team-avatar" />
-            <span>Mantenimiento</span>
+            <span>Manutenzione</span>
           </div>
           <div class="item-equipo">
             <img src="assets/avatar2.png" alt="Avatar 1" class="team-avatar" />
-            <span>Seguridad</span>
+            <span>Sicurezza</span>
           </div>
           <div class="item-equipo">
             <img src="assets/avatar3.png" alt="Avatar 1" class="team-avatar" />
-            <span>Compromiso</span>
+            <span>Impegno</span>
           </div>
           <div class="item-equipo">
             <img src="assets/avatar4.png" alt="Avatar 1" class="team-avatar" />
-            <span>Seguridad</span>
+            <span>Sicurezza</span>
           </div>
           <div class="item-equipo">
             <img src="assets/avatar4.png" alt="Avatar 1" class="team-avatar" />
-            <span>Seguridad</span>
+            <span>Sicurezza</span>
           </div>
           <div class="item-equipo">
             <img src="assets/avatar4.png" alt="Avatar 1" class="team-avatar" />
-            <span>Seguridad</span>
+            <span>Sicurezza</span>
           </div>
         </div>
 
         <div id="cintatres" class="lista-equipo">
           <div class="item-equipo">
             <img src="assets/avatar1.png" alt="Avatar 1" class="team-avatar" />
-            <span>Mantenimiento</span>
+            <span>Manutenzione</span>
           </div>
           <div class="item-equipo">
             <img src="assets/avatar2.png" alt="Avatar 1" class="team-avatar" />
-            <span>Seguridad</span>
+            <span>Sicurezza</span>
           </div>
           <div class="item-equipo">
             <img src="assets/avatar3.png" alt="Avatar 1" class="team-avatar" />
-            <span>Compromiso</span>
+            <span>Impegno</span>
           </div>
           <div class="item-equipo">
             <img src="assets/avatar4.png" alt="Avatar 1" class="team-avatar" />
-            <span>Seguridad</span>
+            <span>Sicurezza</span>
           </div>
           <div class="item-equipo">
             <img src="assets/avatar4.png" alt="Avatar 1" class="team-avatar" />
-            <span>Seguridad</span>
+            <span>Sicurezza</span>
           </div>
           <div class="item-equipo">
             <img src="assets/avatar4.png" alt="Avatar 1" class="team-avatar" />
-            <span>Seguridad</span>
+            <span>Sicurezza</span>
           </div>
         </div>
       </div>
 
       <div class="pie-equipo">
-        <p>Conoce más de nuestro equipo</p>
-        <i class="fas fa-arrow-down"></i>
+        <p id="pie-equipo-2">Scopri di più sul nostro team</p>
+        <!-- <i class="fas fa-arrow-down bounce-arrow"></i> -->
       </div>
     </section>
     <!-- Tercera seccion -->
@@ -177,25 +179,25 @@
     <section class="card-seccion">
       <div class="background-text">BestDealer</div>
       <div class="content-card">
-        <div class="cards">
+        <div class="cards card-1" data-card="1">
           <img src="assets/support.png" alt="Technical Support" />
-          <h3>Soporte Técnico 24/7</h3>
+          <h3>Supporto tecnico 24/7</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
             vehicula nisi a lectus gravida varius.
           </p>
         </div>
-        <div class="cards">
+        <div class="cards card-2" data-card="2">
           <img src="assets/mechanic.png" alt="Mechanical Assistance" />
-          <h3>Asistencia Mecánica</h3>
+          <h3>Assistenza meccanica</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
             vehicula nisi a lectus gravida varius.
           </p>
         </div>
-        <div class="cards">
+        <div class="cards card-3" data-card="3">
           <img src="assets/mechanic.png" alt="Mechanical Assistance" />
-          <h3>Asistencia Mecánica</h3>
+          <h3>Assistenza meccanica</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
             vehicula nisi a lectus gravida varius.
@@ -214,10 +216,10 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula nisi a lectus gravida varius
       </div>
       <div class="background-info">
-        Conoce nuestro servicio de<br>Asistencia En carretera
+        Scopri i nostri servizi<br>Assistenza stradale
       </div>
       <div class="bottom-text">
-        <p>Scroll to explore</p><i class="fas fa-arrow-down"></i>
+        <p id="bottom-text-scoll">Scorri per vedere di piú</p><i class="fas fa-arrow-down"></i>
       </div>
     </section>
     <!-- Quinta seccion -->
@@ -225,10 +227,20 @@
       <div class="stats-container">
         <div class="background-icon"></div>
         <div class="stats-content">
+
           <div class="stats-number"></div>
-          <div id="number-two" class="stats-number-two">+500</div>
-          <div class="stats-description">Cobertura En Más De 25 Provincias Al Rededor Del País</div>
-          <div class="stats-description-two">Talleres en todo el pais con los que tenemos convenios</div>
+          <div class="stats-description">
+            <p>Copertura in più di 25 province in tutta Italia</p>
+          </div>
+          <!-- <div class="contain"> -->
+          <div id="number-two" class="stats-number-two">
+            <p>+500</p>
+          </div>
+          <div class="stats-description-two">
+            <p>Concessionarie su tutto il territorio nazionale con cui abbiamo accordi</p>
+          </div>
+
+          <!-- </div> -->
           <div id="start_1" class="decorative-shapes">
             <img src="assets/svgs/star1_v2.svg" alt="" class="shape star-1">
           </div>
@@ -238,35 +250,37 @@
           <div id="start_3" class="decorative-shapes">
             <img src="assets/svgs/star3.svg" alt="" class="shape asterisk">
           </div>
-          <div class="content-wrapper">
-            <div class="cta-title">Voui Essere Un <span class="">Bestdealer</span> E Lavarore Con Noi?</div>
-            <button class="cta-button">Info <i class="arrow-icon fas fa-arrow-right"></i></button>
-          </div>
         </div>
         <div class="grid-stats">
           <div class="stats stats-1 ">
             <p class="stats-number-stast">12k</p>
-            <p class="stats-description-stast">Cobertura En Más De 25 Provincias Al Rededor Del País</p>
+            <p class="stats-description-stast">Copertura in più di 25 province in tutta Italia</p>
           </div>
           <div class="stats">
             <img src="assets/image copy.png" alt="" class="card-in">
           </div>
-          <div class="stats stats.2">
+          <div class="stats ">
             <button class="cta-button">Info <i class="arrow-icon fas fa-arrow-right"></i></button>
           </div>
+        </div>
+        <div class="content-wrapper">
+          <div class="cta-title">Vuoi essere un <span class="">bestdealer</span><br> e lavorare con noi?</div>
+          <button class="cta-button" onclick="window.location.href='/work.html'">Info <i
+              class="arrow-icon fas fa-arrow-right"></i></button>
         </div>
         <!-- <div class="cta-cotainer">
   
             
           </div> -->
-        <div class="scroll-indicator">
+        <!-- <div class="scroll-indicator">
           <div class="scroll-text">
-            <p>Scroll to explore</p><i class="fas fa-arrow-down"></i>
+            <p>Scorri per vedere di piú</p><i class="fas fa-arrow-down"></i>
           </div>
-        </div>
+        </div> -->
     </section>
+
     <section class="contact-section">
-      <h2 class="contact-title">Contattaco</h2>
+      <h2 class="contact-title">Contattaci</h2>
 
       <form id="contactForm">
         <div class="form-grid">
@@ -300,11 +314,11 @@
             </label>
             <label class="checkbox-item">
               <input type="checkbox" class="checkbox-input" name="tema" />
-              Arruolamenti BestDealer
+              Info su BestDealer
             </label>
             <label class="checkbox-item">
               <input type="checkbox" class="checkbox-input" name="tema" />
-              Vuioi Essere Un Bestdealer
+              Lavora con noi
             </label>
             <label class="checkbox-item">
               <input type="checkbox" class="checkbox-input" name="tema" />
@@ -316,6 +330,7 @@
         <button type="submit" class="submit-button">Invia</button>
       </form>
     </section>
+
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-top">
@@ -324,9 +339,18 @@
           </div>
           <nav class="nav-links">
             <a href="#">Home</a>
-            <a href="#">Chi Siamo</a>
-            <a href="#">Contattaci</a>
-            <a href="#">Piattaforma</a>
+            <a href="/reti-office.html">Reti Officine</a>
+            <a href="/document.html">Documenti</a>
+            <a href="/work.html">Lavora con noi</a>
+            <!-- <a href="http://dev.bestdealer.it/login" aria-label="dasdasd">Portale Usato</a> -->
+            <div class="tooltip">
+              <a href="#">Portale Usato</a>
+              <span class="tooltip-text">In Arrivo</span>
+            </div>
+            <a href="#">Termini e Condizioni</a>
+            <!-- <a href="#"><img src="assets/svgs/facebook.svg" style="color: white;" alt=""></a>
+            <a href="#"><img src="assets/svgs/instagram.svg" alt=""></a>
+            <a href="#"><img src="assets/svgs/linkelnd.svg" alt=""></a> -->
           </nav>
         </div>
 
@@ -340,26 +364,30 @@
           </div>
 
           <div class="footer-section">
-            <h3>Socials</h3>
-            <div class="social-links">
-              <a href="#">LinkedIn</a>
-              <a href="#">Instagram</a>
-            </div>
           </div>
         </div>
+      </div>
 
-        <div class="footer-bottom">
-          <div>2024, All Right Reserved</div>
-          <div>Privacy Policy</div>
-          <div class="developed-by">Developed By <strong>Digithub</strong></div>
+      <div class="footer-bottom">
+        <div></div>
+        <div>Politica sulla riservatezza</div>
+        <div class="developed-by">Developed by<strong>Digithab</strong>
         </div>
       </div>
-      <div class="background--text">BestDealer</div>
+      </div>
+      <div class="footer--text" id="footer-text">BestDealer</div>
     </footer>
   </section>
-
-
   <!-- Trigger -->
+  <script>
+    const toggleButton = document.getElementById("menu-toggle");
+    const nav = document.querySelector(".nav");
+
+    toggleButton.addEventListener("click", () => {
+      nav.classList.toggle("nav-open");
+    });
+  </script>
 </body>
+
 
 </html>

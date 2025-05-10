@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <title>Rete Officine</title>
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="assets/svgs/logo.svg" alt="" />
+      <p>BestDealer</p>
+    </div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">Chi Siamo</a></li>
+        <li><a href="contact.html">Contatti</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="http://dev.bestdealer.it/signup" class="signup" target="_blank">Sign Up</a>
+      <a href="http://dev.bestdealer.it/login" target="_blank" class="signin">Sign In</a>
+    </div>
+  </header>
+  <main class="about-us-main">
+    <div class="container">
+      <div class="header-reti">
+        <h1>Rete Officine</h1>
+      </div>
+      <div class="region-list" id="regionList">
+        <!-- Regions will be populated by JavaScript -->
+      </div>
+      <div class="footer-reti">
+        <button class="close-button" id="closeButton">Chiudi</button>
+      </div>
+    </div>
+  </main>
+
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <img src="assets/svgs/logo.svg" alt="" /> BestDealer
+        </div>
+        <nav class="nav-links">
+          <a href="#">Home</a>
+          <a href="/reti-office.html">Reti Officine</a>
+          <a href="/document.html">Documenti</a>
+          <a href="#">Vuoi lavorare con noi?</a>
+          <!-- <a href="http://dev.bestdealer.it/login" aria-label="dasdasd">Portale Usato</a> -->
+          <div class="tooltip">
+            <a href="#">Portale Usato</a>
+            <span class="tooltip-text">In Arrivo</span>
+          </div>
+          <a href="#">Termini e Condizioni</a>
+          <a href="#"><img src="assets/svgs/facebook.svg" style="color: white;" alt=""></a>
+          <a href="#"><img src="assets/svgs/instagram.svg" alt=""></a>
+          <a href="#"><img src="assets/svgs/linkelnd.svg" alt=""></a>
+        </nav>
+      </div>
+
+      <div class="footer-main">
+        <div class="footer-section">
+          <h3>Contatti</h3>
+          <div class="contact-info">
+            <a href="tel:+39026115227">+39 026 115 22 74</a>
+            <a href="mailto:info@bestdealer.it">info@bestdealer.it</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div></div>
+      <div>Politica sulla riservatezza</div>
+      <div class="developed-by">Developed by<strong>Digithab</strong>
+      </div>
+    </div>
+    </div>
+    <div class="footer--text" id="footer-text">BestDealer</div>
+  </footer>
+  <script>
+    // Sample data structure (from your example)
+    const data = [
+      {
+        "regione": "ABRUZZO",
+        "count": 0,
+        "data": []
+      },
+      {
+        "regione": "BASILICATA",
+        "count": 0,
+        "data": []
+      },
+      {
+        "regione": "CALABRIA",
+        "count": 20,
+        "data": [
+          {
+            "id": 63,
+            "nome": "OFFICINA VELTRI LUCIANO",
+            "indirizzo": "VIA DEI GLADIOLI, SNC",
+            "cap": "87032",
+            "telefono": "098248770",
+            "email": "officinavetri@gmail.com",
+            "citta": "AMANTEA",
+            "provincia": "CS",
+            "commento": "3333",
+            "tipo": [
+              "IMPIANTI GPL E METANO",
+              "ELETTRAUTO",
+              "OFFICINA MECCANICA"
+            ]
+          },
+          {
+            "id": 73,
+            "nome": "OFFICINA MECCANICA F.LLI NARDI",
+            "indirizzo": "CDA CORVO 91",
+            "cap": "87042",
+            "telefono": "0891946520",
+            "email": "soccorsoacinardi@libero.it",
+            "citta": "ALTOMONTE",
+            "provincia": "CS",
+            "commento": null,
+            "tipo": [
+              "IMPIANTI GPL E METANO",
+              "ELETTRAUTO",
+              "OFFICINA MECCANICA"
+            ]
+          },
+          {
+            "id": 103,
+            "nome": "OFFICINA COVELLO",
+            "indirizzo": "VIA MESCA",
+            "cap": "87046",
+            "telefono": "0984934023",
+            "email": "covelloalfastyle@libero.it",
+            "citta": "MONTALTO UFFUGO",
+            "provincia": "CS",
+            "commento": null,
+            "tipo": [
+              "ARIA CONDIZIONATA",
+              "IMPIANTI GPL E METANO",
+              "ELETTRAUTO",
+              "OFFICINA MECCANICA",
+              "CAMBIO AUTOMATICO"
+            ]
+          },
+          {
+            "id": 107,
+            "nome": "RB OFFICINE",
+            "indirizzo": "VIA TOMMASO FUSCO",
+            "cap": "88046",
+            "telefono": "0968442039",
+            "email": "",
+            "citta": "LAMEZIA TERME",
+            "provincia": "CZ",
+            "commento": null,
+            "tipo": []
+          },
+          {
+            "id": 141,
+            "nome": "autoservice",
+            "indirizzo": "via delle terme",
+            "cap": "88046",
+            "telefono": "3926405977",
+            "email": "",
+            "citta": "LAMEZIA TERME",
+            "provincia": "CZ",
+            "commento": "40+",
+            "tipo": [
+              "ARIA CONDIZIONATA",
+              "CARROZZERIA E VERNICIATURA",
+              "IMPIANTI GPL E METANO",
+              "ELETTRAUTO",
+              "GOMMISTA",
+              "OFFICINA MECCANICA",
+              "CAMBIO AUTOMATICO"
+            ]
+          }
+        ]
+      },
+      {
+        "regione": "CAMPANIA",
+        "count": 0,
+        "data": []
+      },
+      {
+        "regione": "EMILIA-ROMAGNA",
+        "count": 0,
+        "data": []
+      },
+      {
+        "regione": "FRIULI-VENEZIA GIULIA",
+        "count": 0,
+        "data": []
+      },
+      {
+        "regione": "LAZIO",
+        "count": 3,
+        "data": [
+          {
+            "id": 111,
+            "nome": "OFFICINA CENTRALE",
+            "indirizzo": "VIA TIBURTINA 400",
+            "cap": "00185",
+            "telefono": "064444555",
+            "email": "info@officinacentrale.it",
+            "citta": "ROMA",
+            "provincia": "RM",
+            "commento": null,
+            "tipo": [
+              "ARIA CONDIZIONATA",
+              "ELETTRAUTO",
+              "OFFICINA MECCANICA"
+            ]
+          }
+        ]
+      },
+      {
+        "regione": "LIGURIA",
+        "count": 0,
+        "data": []
+      },
+      {
+        "regione": "LOMBARDIA",
+        "count": 0,
+        "data": []
+      }
+    ];
+
+    // Function to generate region list
+    function populateRegions() {
+      const regionList = document.getElementById('regionList');
+
+      data.forEach(region => {
+        // Create region item
+        const regionItem = document.createElement('div');
+        regionItem.classList.add('region-item');
+        regionItem.innerHTML = `
+                    <span class="region-name">${region.regione}</span>
+                    <span>(${region.count})</span>
+                `;
+
+        // Create workshop panel
+        const workshopPanel = document.createElement('div');
+        workshopPanel.classList.add('workshop-panel');
+
+        // Add workshops to panel
+        if (region.count > 0) {
+          const workshopList = document.createElement('div');
+          workshopList.classList.add('workshop-list');
+
+          region.data.forEach(workshop => {
+            const workshopItem = document.createElement('div');
+            workshopItem.classList.add('workshop-item');
+
+            // Prepare services tags HTML
+            let servicesHTML = '';
+            if (workshop.tipo && workshop.tipo.length > 0) {
+              servicesHTML = '<div class="workshop-services">';
+              workshop.tipo.forEach(service => {
+                servicesHTML += `<span class="service-tag">${service}</span>`;
+              });
+              servicesHTML += '</div>';
+            }
+
+            workshopItem.innerHTML = `
+                            <div class="workshop-name">${workshop.nome}</div>
+                            <div class="workshop-info">
+                                <div>${workshop.indirizzo}, ${workshop.cap} ${workshop.citta} (${workshop.provincia})</div>
+                                <div>Tel: ${workshop.telefono}</div>
+                                ${workshop.email ? `<div>Email: ${workshop.email}</div>` : ''}
+                                ${workshop.commento ? `<div>Note: ${workshop.commento}</div>` : ''}
+                            </div>
+                            ${servicesHTML}
+                        `;
+
+            workshopList.appendChild(workshopItem);
+          });
+
+          workshopPanel.appendChild(workshopList);
+        } else {
+          workshopPanel.innerHTML = '<div class="no-workshops">Nessuna officina disponibile in questa regione</div>';
+        }
+
+        // Add click event to toggle workshop panel
+        regionItem.addEventListener('click', function () {
+          // Remove active class from all region items
+          document.querySelectorAll('.region-item').forEach(item => {
+            if (item !== regionItem) {
+              item.classList.remove('active');
+              const nextPanel = item.nextElementSibling;
+              if (nextPanel && nextPanel.classList.contains('workshop-panel')) {
+                nextPanel.style.maxHeight = null;
+              }
+            }
+          });
+
+          // Toggle active class
+          this.classList.toggle('active');
+
+          // Toggle workshop panel
+          if (workshopPanel.style.maxHeight) {
+            workshopPanel.style.maxHeight = null;
+          } else {
+            workshopPanel.style.maxHeight = workshopPanel.scrollHeight + "px";
+          }
+        });
+
+        // Add region item and workshop panel to the list
+        regionList.appendChild(regionItem);
+        regionList.appendChild(workshopPanel);
+      });
+    }
+
+    // Initialize the list when page loads
+    document.addEventListener('DOMContentLoaded', function () {
+      populateRegions();
+
+      // Add click event for close buttons
+      document.querySelector('.close-btn').addEventListener('click', function () {
+        // Here you would add code to close the modal in a real application
+        alert('Modal closed');
+      });
+
+      document.getElementById('closeButton').addEventListener('click', function () {
+        // Here you would add code to close the modal in a real application
+        alert('Modal closed');
+      });
+    });
+  </script>
+</body>
+
+</html>
